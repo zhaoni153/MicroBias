@@ -1,4 +1,4 @@
-# Modeling microbiome bias using log-linear models
+# Log-Linear model for biases in microbiome studies
 ---
 Ni Zhao (nzhao10@jhu.edu), Glen Satten (GSatten@emory.edu)
 ---
@@ -82,7 +82,7 @@ Here, we fit the full model with both plate effect and the taxon-taxon interacti
 
 ```{r estimate}
 x =cbind(delta , model.matrix(~factor(meta.data$Plate)+0)[,2:6] )
-mod = MicroBias.fit(otu.tab = otu.tab,x = x, offset = true.freq , delta = delta)
+mod = LLBias.fit(otu.tab = otu.tab,x = x, offset = true.freq , delta = delta)
 ```
 
 ## Hypothesis testing
@@ -105,7 +105,7 @@ C.list[[2]][1, c(2, 4)] = c(1, -1)
 C.list[[3]][1, c(2, 5)] = c(1, -1)
 C.list[[4]][1, c(2, 6)] = c(1, -1)
 C.list[[5]][1, c(2, 7)] = c(1, -1)
-interTest_Ava =  MicroBias.test(mod, C.list = C.list, 
+interTest_Ava =  LLBias.test(mod, C.list = C.list, 
                                 n.perm = 1000,  tol = 1e-8)
 ```
 
@@ -118,7 +118,7 @@ C.matrix[2, c(13,37)] = c(1, -1);
 C.matrix[3, c(13,49)] = c(1, -1); 
 C.matrix[4,  c(13,61)] = c(1, -1)
 C.matrix[5,  c(13,73)] = c(1, -1)
-interTest_Ava = MicroBias.test(mod, C.matrix = C.matrix, 
+interTest_Ava = LLBias.test(mod, C.matrix = C.matrix, 
                                n.perm = 1000,  tol = 1e-8)
 ```
 
