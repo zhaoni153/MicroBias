@@ -87,6 +87,8 @@ mod = LLBias.fit(otu.tab = otu.tab,x = x, offset = true.freq , delta = delta)
 
 ## Hypothesis testing
 
+$\beta$
+
 Contrasts of <img src="https://latex.codecogs.com/gif.latex?\beta" title="\beta" /> may be tested if it satisfies the testability requirement, as shown in [1]. Constructing the contrast matrix is usually challenging, as the number of parameters is large in our model. We provide two ways to construct the contrast matrix. 
 
 As an example, we test whether A vaginae interact with the bias of any of the other OTUs. This corresponds to the H7(1) in the simulations of the paper [1]. Recall that our <img src="https://latex.codecogs.com/gif.latex?\beta" title="\beta" /> matrix is as follows: 
