@@ -5,7 +5,7 @@ Ni Zhao (nzhao10@jhu.edu), Glen Satten (GSatten@emory.edu)
 
 
 ## Overview
-The MicroBias package contains functions that use log-linear model to assess for bias in microbiome sequencing studies. Currently, the model works when the true relative abundances (including which taxa are present in samples) are known, therefore, is only applicable to mock community data. Extensions to situations when true relative abundances are unknown are under development. Please refer to [1] for details about the methodology. Here, we will use the famous Brooks dataset [2] to demonstrate the utility of this package. 
+The LLBias package contains functions that use log-linear model to assess for bias in microbiome sequencing studies. Currently, the model works when the true relative abundances (including which taxa are present in samples) are known, therefore, is only applicable to mock community data. Extensions to situations when true relative abundances are unknown are under development. Please refer to [1] for details about the methodology. Here, we will use the famous Brooks dataset [2] to demonstrate the utility of this package. 
 
 ## Depends
 LLBias depends on package limSolve
@@ -16,9 +16,9 @@ We can install the package through github. This install_github functino requires
 
 ```{r download, eval = F}
 library(devtools)
-install_github("zhaoni153/MicroBias")
+install_github("zhaoni153/LLBias")
 library(limSolve)
-library(MicroBias)
+library(LLBias)
 ```
 
 ## LLBias model description
@@ -129,5 +129,4 @@ interTest_Ava = MicroBias.test(mod, C.matrix = C.matrix,
 [2] McLaren MR, Willis AD, Callahan BJ. Consistent and correctable bias in metagenomic sequencing experiments. eLife, 8:e46923, 2019. ISSN 2050-084X.
 
 [3] Brooks JP,Edwards DJ,Harwich MD,Rivera MC,Fettweis JM,Serrano MG,Reris RA,Sheth NU, Huang B, Girerd P, Strauss JF, Jefferson KK, Buck GA. The truth about metagenomics: quantifying and counteracting bias in 16S rRNA studies. BMC Microbiol, 15:66, 2015.
-
 
