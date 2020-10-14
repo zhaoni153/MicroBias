@@ -5,10 +5,10 @@ Ni Zhao (nzhao10@jhu.edu), Glen Satten (GSatten@emory.edu)
 
 
 ## Overview
-The LLBias package contains functions that use log-linear model to assess for bias in microbiome sequencing studies. Currently, the model works when the true relative abundances (including which taxa are present in samples) are known, therefore, is only applicable to mock community data. Extensions to situations when true relative abundances are unknown are under development. Please refer to [1] for details about the methodology. Here, we will use the famous Brooks dataset [2] to demonstrate the utility of this package. 
+The MicroBias package contains functions that use log-linear model to assess for bias in microbiome sequencing studies. Currently, the model works when the true relative abundances (including which taxa are present in samples) are known, therefore, is only applicable to mock community data. Extensions to situations when true relative abundances are unknown are under development. Please refer to [1] for details about the methodology. Here, we will use the famous Brooks dataset [2] to demonstrate the utility of this package. 
 
 ## Depends
-LLBias depends on package limSolve
+MicroBias depends on package limSolve
 
 ## Package download and installation 
 
@@ -16,13 +16,17 @@ We can install the package through github. This install_github functino requires
 
 ```{r download, eval = F}
 library(devtools)
-install_github("zhaoni153/LLBias")
+install_github("zhaoni153/MicroBias")
 library(limSolve)
-library(LLBias)
+library(MicroBias)
 ```
 
-## LLBias model description
-The LLBias is a log-linear model for bias inference in microbiome studies. It is an extension of the multiplicative bias generation model from [2]. The model is specified as 
+## MicroBias model description
+The MicroBias is a log-linear model for bias inference in microbiome studies. It is an extension of the multiplicative bias generation model from [2]. The model is specified as 
+
+$$
+\ln{\tilde p_{ij}} = \ln{p_{ij}} + X_{i\cdot} \beta_{\cdot j} + \epsilon_{ij}, \text{ for } \Delta_{ij} > 0, 
+$$
 
 <img src="https://latex.codecogs.com/gif.latex?\ln{\tilde&space;p_{ij}}&space;=&space;\ln{p_{ij}}&space;&plus;&space;X_{i\cdot}&space;\beta_{\cdot&space;j}&space;&plus;&space;\epsilon_{ij},&space;\text{&space;for&space;}&space;\Delta_{ij}&space;>&space;0" title="\ln{\tilde p_{ij}} = \ln{p_{ij}} + X_{i\cdot} \beta_{\cdot j} + \epsilon_{ij}, \text{ for } \Delta_{ij} > 0" />
 
