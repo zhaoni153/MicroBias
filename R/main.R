@@ -9,7 +9,7 @@
 #' @return coefficient estimate of the log linear model (beta.matrix); and some other variables that need to be used for inference.
 #' @export
 #'
-LLBias.fit = function(otu.tab, x, offset=NULL, delta=NULL,
+MicroBias.fit = function(otu.tab, x, offset=NULL, delta=NULL,
                      cols.are.otus=TRUE, tol=10^-8) {
 
   otu.tab=as.matrix(otu.tab)
@@ -124,7 +124,7 @@ LLBias.fit = function(otu.tab, x, offset=NULL, delta=NULL,
 #' @return p-value from the hypothesis testing
 #' @export
 #'
-LLBias.test = function(mod,  C.matrix = NULL,  n.perm = 1000, tol = 1e-8, C.list = NULL){
+MicroBias.test = function(mod,  C.matrix = NULL,  n.perm = 1000, tol = 1e-8, C.list = NULL){
 
   if ((!is.null(C.list))&(!is.null(C.matrix))){
     stop("Both C.list and C.matrix specify the contrast matrix. Only one of them needs to be specified.")
