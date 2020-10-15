@@ -1,4 +1,4 @@
-# Log-Linear model for biases in microbiome studies
+# Modeling microbiome biases using log-linear models
 ---
 Ni Zhao (nzhao10@jhu.edu), Glen Satten (GSatten@emory.edu)
 ---
